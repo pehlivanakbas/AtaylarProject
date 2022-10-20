@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    xmlns:tools="http://schemas.android.com/tools">
+<fragment
+    android:id="@+id/login"
+    android:label="Home"
+    tools:layout="@layout/fragment_login">
+    <action
+        android:id="@+id/action_login_to_fragment_projects"
+        app:destination="@id/fragment_projects" />
+</fragment>
+
+
+
+    <fragment
+        android:id="@+id/fragment_projects"
+        android:label="projects"
+        tools:layout="@layout/fragment_projects">
+        <action
+            android:id="@+id/action_fragment_projects_self"
+            app:destination="@id/fragment_projects" />
+    </fragment>
+
+
+
+    </navigation>

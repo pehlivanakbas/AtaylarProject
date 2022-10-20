@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/myProfile"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Kullanıcı Girişi" />
+    <item
+        android:id="@+id/projects"
+        android:icon="@drawable/ic_baseline_work_24"
+        android:title="Projeler" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Ayarlar" />
+
+
+
+<item android:title="Sub items"></item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_baseline_work_24"
+            android:title="Sub item 1" />
+        <item
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Sub item 2" />
+    </group>
+</menu>

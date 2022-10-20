@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:visibility="visible"
+android:layout_width="match_parent"
+android:id="@+id/signUpFormUI"
+android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:padding="15dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".ViewController.Adapters.LoginPage"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="37dp">
+
+        <EditText
+            android:id="@+id/userNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Ad Soyad"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#BD9DB4"
+            android:textColorHint="#81687A" />
+
+        <EditText
+            android:id="@+id/CompanyName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Firma Adı"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#BD9DB4"
+            android:textColorHint="#81687A" />
+
+        <EditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Telefon Numarası"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textColor="#BD9DB4"
+            android:textColorHint="#81687A" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Parola"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="#BD9DB4"
+            android:textColorHint="#81687A" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:hint="E-posta"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="#121111"
+            android:textColorHint="#81687A" />
+
+        <EditText
+            android:id="@+id/CompanySocialMediaName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Sosyal Medya Hesabı"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#121112"
+            android:textColorHint="#81687A" />
+
+
+        <!--<EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="287dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/circle"
+                android:drawableLeft="@drawable/keyvector"
+
+                android:drawablePadding="25dp"
+                android:hint="Şifre"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#81687A" />
+-->
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Zaten üye misiniz?" />
+
+            <TextView
+                android:id="@+id/navigateToLoginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:text="Giriş Yap"
+                android:textColor="@color/purple_700"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/signUpFormCompletedButton"
+            android:layout_width="287dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Kayıt ol "
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+        <!--  <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="35dp"
+                android:text="By clicking on SignUp,you agree to our Terms of Service and Privacy policy"
+                android:textColor="#FFFBF6"
+                android:textSize="15sp" />
+-->
+
+
+        <!--  <LinearLayout
+                  android:id="@+id/layout2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="15dp"
+                  android:orientation="horizontal">
+
+
+                  <TextView
+                      android:id="@+id/textView15"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="15dp"
+                      android:layout_weight="1"
+                      android:text="Zaten üye misiniz?" />
+
+                  <TextView
+                      android:id="@+id/girisyap"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="10dp"
+                      android:layout_weight="1"
+                      android:clickable="true"
+                      android:text="Giriş yap"
+                      android:textColor="@color/purple_700"
+                      tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+              </LinearLayout>
+              -->
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
