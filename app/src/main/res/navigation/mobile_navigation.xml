@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mobile_navigation"
     xmlns:tools="http://schemas.android.com/tools">
-<fragment
+    <fragment
     android:id="@+id/login"
     android:label="Home"
-    tools:layout="@layout/fragment_login">
+    tools:layout="@layout/fragment_employeelist">
     <action
         android:id="@+id/action_login_to_fragment_projects"
         app:destination="@id/fragment_projects" />
@@ -18,12 +18,14 @@
     <fragment
         android:id="@+id/fragment_projects"
         android:label="projects"
-        tools:layout="@layout/fragment_projects">
-        <action
-            android:id="@+id/action_fragment_projects_self"
-            app:destination="@id/fragment_projects" />
-    </fragment>
+        tools:layout="@layout/fragment_projects"/>
 
 
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_login_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/login_nav" />
     </navigation>
