@@ -2,15 +2,16 @@ package com.example.ataylarproject.Activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Button
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.ataylarproject.Fragments.CompanyInfoFragment
 import com.example.ataylarproject.Fragments.EmployeelistFragment
+import com.example.ataylarproject.Fragments.ProjectBlocksFragment
 import com.example.ataylarproject.Fragments.ProjectSitesFragment
 import com.example.ataylarproject.R
 import com.google.android.material.navigation.NavigationView
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     private val projectSitesFragment = ProjectSitesFragment(this)
     private val EmployeelistFragment = EmployeelistFragment(this)
     private val CompanyInfoFragment = CompanyInfoFragment(this)
+    private val ProjectBlocksFragment = ProjectBlocksFragment(this)
+
+
 
 
     // override the onSupportNavigateUp() function to launch the Drawer when the hamburger icon is clicked
@@ -44,7 +48,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 
 

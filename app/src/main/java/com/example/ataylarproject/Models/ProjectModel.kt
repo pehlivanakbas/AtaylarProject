@@ -34,3 +34,11 @@ data class Location(
 
     val regionId: String = ""
 )
+data class Fault(
+    val employeeNote: String = "",
+
+    val adminId: String = "",
+
+    val locationId: String = ""
+)
+

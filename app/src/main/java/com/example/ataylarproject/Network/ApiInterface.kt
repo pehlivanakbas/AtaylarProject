@@ -1,9 +1,6 @@
 package com.example.ataylarproject.Network
 
-import com.example.ataylarproject.Models.Block
-import com.example.ataylarproject.Models.Location
-import com.example.ataylarproject.Models.Region
-import com.example.ataylarproject.Models.Site
+import com.example.ataylarproject.Models.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -16,7 +13,7 @@ interface ApiInterface {
     fun createSite(@Body site: Site): Call<Site>
 
     @POST("api/projects/block")
-    fun createBlock(@Body block: Block): Call<Block>
+    fun createBlock(@Body block: Site): Call<Block>
 
     @POST("api/projects/region")
     fun createRegion(@Body region: Region): Call<Region>
@@ -36,6 +33,10 @@ interface ApiInterface {
     @GET("api/projects/locations/{id}")
     fun getALlLocations(@Path (value = "id",  encoded = true) id : String) : Call<List<Location>>
 
+    @POST("api/projects/fault")
+    fun createFault(@Body fault: Fault): Call<Fault>
 
+    @GET("api/projects/fault/{id}")
+    fun getALlFaults(@Path (value = "id",  encoded = true) id : String) : Call<List<Fault>>
 
 }

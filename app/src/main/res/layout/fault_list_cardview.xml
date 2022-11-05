@@ -15,14 +15,14 @@
     <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:id="@+id/blockcard"
+        android:id="@+id/faultcard"
         android:layout_height="wrap_content">
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/textblock"
+            android:id="@+id/textFault"
             android:gravity="center"
             android:background="@drawable/circle"
             android:textSize="20sp">

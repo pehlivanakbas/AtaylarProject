@@ -2,10 +2,7 @@ package com.example.ataylarproject.Network.Services
 
 import android.util.Log
 import com.example.ataylarproject.Constants
-import com.example.ataylarproject.Models.Block
-import com.example.ataylarproject.Models.Location
-import com.example.ataylarproject.Models.Region
-import com.example.ataylarproject.Models.Site
+import com.example.ataylarproject.Models.*
 import com.example.ataylarproject.Network.ApiInterface
 import com.example.ataylarproject.Network.ErrorHandler
 import com.example.ataylarproject.Network.ErrorModel
@@ -84,7 +81,7 @@ object ProjectService {
     //blocks
 
     fun createBlocks(
-        requestBody: Block,
+        requestBody: Site,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
     )
@@ -276,5 +273,61 @@ object ProjectService {
         })
     }
 
+    //sites
+    fun createFault(
+        requestBody:Fault,
+        success: (success: Any) -> Unit,
+        failure: (failure: ErrorModel) -> Unit
+    )
+    {
+        val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
+        val apiCall : Call<Fault>? = apiInterface?.createFault(requestBody)
 
+        apiCall?.enqueue(object : retrofit2.Callback<Fault> {
+
+            override fun onResponse(call: Call<Fault>, response: Response<Fault>) {
+                val responseAny = response as Response<*>
+                when(response.code()) {
+                    200 -> response.body()?.let {
+                        success(it)
+                    }
+                    else -> failure(ErrorHandler().returnResponse() as ErrorModel)
+                }
+            }
+
+            override fun onFailure(call: Call<Fault>, t: Throwable) {
+                Log.d("AUTH_ERROR", t.toString())
+                failure(ErrorHandler().returnResponse() as ErrorModel)
+            }
+
+        })
+    }
+
+    fun getAllFaults(
+        success: (success: Any) -> Unit,
+        failure: (failure: ErrorModel) -> Unit
+    )
+    {
+        val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
+        val apiCall : Call<List<Fault>>? = apiInterface?.getALlFaults(Constants.ADMIN_ID)
+
+        apiCall?.enqueue(object : retrofit2.Callback<List<Fault>> {
+
+            override fun onResponse(call: Call<List<Fault>>, response: Response<List<Fault>>) {
+                val responseAny = response as Response<*>
+                when(response.code()) {
+                    200 -> response.body()?.let {
+                        success(it)
+                    }
+                    else -> failure(ErrorHandler().returnResponse() as ErrorModel)
+                }
+            }
+
+            override fun onFailure(call: Call<List<Fault>>, t: Throwable) {
+                Log.d("AUTH_ERROR", t.toString())
+                failure(ErrorHandler().returnResponse() as ErrorModel)
+            }
+
+        })
+    }
 }
