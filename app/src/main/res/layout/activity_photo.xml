@@ -27,7 +27,7 @@
 <androidx.cardview.widget.CardView
     android:id="@+id/card1"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="150dp"
     android:layout_marginTop="10dp"
     android:background="@color/black"
     android:layout_marginStart="10dp"
@@ -45,7 +45,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent"
+        android:layout_height="250dp"
         android:background="#A4CFF1">
         <TextView
             android:layout_width="wrap_content"
@@ -75,11 +75,21 @@
         <EditText
             android:id="@+id/description"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="110dp"
             android:textSize="18sp"
             android:background="#F6E2E9">
 
         </EditText>
-    </LinearLayout>
 
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/saveFaults"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="130dp"
+        android:text="KAydet">
+
+    </Button>
 </LinearLayout>

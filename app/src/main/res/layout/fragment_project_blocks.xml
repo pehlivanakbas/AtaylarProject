@@ -6,7 +6,7 @@
     tools:context=".Fragments.ProjectBlocksFragment">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonback"
+        android:id="@+id/buttonbackblock"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:text="Geri"
@@ -19,20 +19,16 @@
     </androidx.appcompat.widget.AppCompatButton>
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonnext"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:text="İleri"
-        android:textSize="12sp"
-        android:layout_marginLeft="310dp"
-        android:background="@drawable/shapetransparent"
-        android:drawableRight="@drawable/buttonmexticon">
-
-    </androidx.appcompat.widget.AppCompatButton>
 
 
+
+    <TextView
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="Bloklar"
+        android:textSize="30sp"
+        android:textStyle="bold" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBlocks"
         android:layout_marginTop="50dp"
@@ -40,7 +36,7 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/project_list_cardview"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabaddsite"
+        android:id="@+id/fabaddblock"
         android:layout_width="77dp"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

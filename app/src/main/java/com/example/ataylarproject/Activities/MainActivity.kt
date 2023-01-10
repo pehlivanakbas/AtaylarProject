@@ -4,15 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.ui.AppBarConfiguration
-import com.example.ataylarproject.Fragments.CompanyInfoFragment
-import com.example.ataylarproject.Fragments.EmployeelistFragment
-import com.example.ataylarproject.Fragments.ProjectBlocksFragment
-import com.example.ataylarproject.Fragments.ProjectSitesFragment
+import com.example.at.CompanyInfoFragment
+import com.example.ataylarproject.Fragments.*
+import com.example.ataylarproject.Models.LegislationModel
 import com.example.ataylarproject.R
 import com.google.android.material.navigation.NavigationView
 
@@ -26,7 +24,9 @@ class MainActivity : AppCompatActivity() {
     private val projectSitesFragment = ProjectSitesFragment(this)
     private val EmployeelistFragment = EmployeelistFragment(this)
     private val CompanyInfoFragment = CompanyInfoFragment(this)
-    private val ProjectBlocksFragment = ProjectBlocksFragment(this)
+    private val LegislationFragment = FragmentMainLegistlation(this)
+    private val documentsfragment = DocumentFragment(this)
+
 
 
 
@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 
 
@@ -90,9 +89,30 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.Faults -> {
+                    replaceFragment(AssignProjectFragment(this))
+                    //startActivity(intent)
+                    true
+                }
+
+                R.id.addFaults -> {
+                    replaceFragment(AddFaultsFragment(this))
+                    //startActivity(intent)
+                    true
+                }
+                R.id.AddUser -> {
+                    replaceFragment(AddEmployeeFragment())
+                    //startActivity(intent)
+                    true
+                }
                 R.id.exitbutton -> {
                     val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
+                    true
+                }
+                R.id.legislation -> {
+                    replaceFragment(FragmentMainLegistlation(this))
+                    //startActivity(intent)
                     true
                 }
                 else -> {
@@ -101,15 +121,12 @@ class MainActivity : AppCompatActivity() {
             }
         }}
 
-
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager.beginTransaction()
         fragmentManager.replace(R.id.framelayout, fragment)
         fragmentManager.commit() //fragmentler commit metod ile begin metodu arasında olmalı commit olmadan kod calışmayacaktır.
     }
-    fun backActionBar(button: Button){
 
-    }
 
 }
 

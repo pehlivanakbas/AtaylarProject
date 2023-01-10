@@ -16,16 +16,24 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:id="@+id/text"
-                android:background="@drawable/circle"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
+                android:text="User"
                 android:textSize="20sp">
-
             </androidx.appcompat.widget.AppCompatTextView>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/siteinfobutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/ic_outline_info_24">
 
+            </androidx.appcompat.widget.AppCompatButton>
         </androidx.cardview.widget.CardView>
 
 

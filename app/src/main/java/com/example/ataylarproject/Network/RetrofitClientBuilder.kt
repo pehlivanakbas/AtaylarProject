@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 object RetrofitClientBuilder {
 
     private var retrofit : Retrofit? = null
-    private const val BASE_API_URL = "http://10.0.2.2:8081/customer-api/"
+    private const val BASE_API_URL = "https://customer-api-zoxf4nzfka-ey.a.run.app/customer-api/"
     var gson: Gson = GsonBuilder()
         .setLenient()
         .create()
@@ -33,7 +33,6 @@ object RetrofitClientBuilder {
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build() //bitirmek için
-               // .create(ApiInterface::class.java)
 
         }
 

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "614319403398",
+    "project_id": "ataylar-7bc6d",
+    "storage_bucket": "ataylar-7bc6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614319403398:android:de26050c5d3d9712ecfc07",
+        "android_client_info": {
+          "package_name": "com.example.ataylarproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614319403398-9tdn5hknd96qbhlvhgqjamkl0uelfcmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhldCKJ84LztdpCcSQKGk9JaRJhHMxUrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "614319403398-9tdn5hknd96qbhlvhgqjamkl0uelfcmr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "614319403398-cudtetqrrhmlr1gnpjuhfbcqlb662edq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.umutyilmaz.ataylar-ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

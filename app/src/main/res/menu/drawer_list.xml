@@ -12,14 +12,27 @@
         android:id="@+id/projects"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="Projeler" />
-
+    <item
+        android:id="@+id/Faults"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Kusurlar" />
+    <item
+        android:id="@+id/AddUser"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Kullanıcı ekle" />
+    <item
+        android:id="@+id/legislation"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Mevzuatlar" />
+    <item
+        android:id="@+id/addFaults"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Kusur ekle" />
 
 
 <item android:title="  "></item>
     <item android:title="  "></item>
-    <item android:title="  "></item>
-    <item android:title="  "></item>
-    <item android:title="  "></item>
+
 
 
     <item android:title="Aksaklık Resmi Yükle"

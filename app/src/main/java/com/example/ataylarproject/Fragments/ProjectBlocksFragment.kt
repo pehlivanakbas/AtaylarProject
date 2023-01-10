@@ -1,32 +1,39 @@
 package com.example.ataylarproject.Fragments
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ataylarproject.Adapters.BlockListInterface
 import com.example.ataylarproject.Adapters.BlocksAdapter
+import com.example.ataylarproject.Constants
 import com.example.ataylarproject.Models.Block
-import com.example.ataylarproject.Models.Site
 import com.example.ataylarproject.Network.Services.ProjectService
 import com.example.ataylarproject.R
-import java.text.FieldPosition
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class ProjectBlocksFragment(context: Context) : Fragment(),BlockListInterface {
+class ProjectBlocksFragment(context: Context, private val siteIdArg: String = "")   : androidx.fragment.app.Fragment(), BlockListInterface {
 
     lateinit var adapter: BlocksAdapter
     lateinit var rvblockslist: RecyclerView
     lateinit var buttonBack: Button
-    lateinit var buttonnext:Button
-    lateinit var projectregion:ProjectRegionFragment
+    lateinit var projectSitesFragment: ProjectSitesFragment
+    var apiResult : MutableList<Block> = mutableListOf()
+    lateinit var siteId: String
+    var rvItemListBlock = mutableListOf<String>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,45 +46,65 @@ class ProjectBlocksFragment(context: Context) : Fragment(),BlockListInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        buttonnext=view.findViewById(R.id.buttonnext)
-        buttonBack = view.findViewById(R.id.buttonback)
-        rvblockslist = view.findViewById(R.id.rvBlocks)
+        this.siteId = siteIdArg
         getBlockList()
+        buttonBack = view.findViewById(R.id.buttonbackblock)
+        rvblockslist = view.findViewById(R.id.rvBlocks)
+        val addBlockbutton:FloatingActionButton=view.findViewById(R.id.fabaddblock)
 
-buttonnext.setOnClickListener {
-    projectregion=ProjectRegionFragment(it.context)
-    replaceFragment(projectregion)
-}
+        addBlockbutton.setOnClickListener {
+            showdialog()
+        }
+        buttonBack.setOnClickListener {
+           projectSitesFragment= ProjectSitesFragment(requireContext())
+           replaceFragment(projectSitesFragment)
+       }
     }
 
+    private fun showdialog() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Blok Ekle")
+        val input = EditText(requireContext())
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.setHint("Lütfen blok adı giriniz.")
+        input.inputType = InputType.TYPE_CLASS_TEXT
+        builder.setView(input)
+        builder.setPositiveButton("Kaydet", DialogInterface.OnClickListener { dialog, which ->
+            createNewBlocks(input.text.toString())
 
-    private fun createNewBlocks() {
+        })
+        builder.setNegativeButton(
+            "İptal",
+            DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+        builder.show()
+    }
+    private fun createNewBlocks(BlockName:String) {
         ProjectService.createBlocks(
-            Site("P Blok", "12"),
+            Block(BlockName,Constants.ADMIN_ID, siteId,  id = 1),
             { success ->
-                print("oley")
+                Toast.makeText(activity, "Blok Ekleme Başarılı", Toast.LENGTH_LONG).show()
                 getBlockList()
             },
         ) { failure ->
             print(failure)
+            Toast.makeText(activity, "Blok ekleme esnasında bir hata meydana geldi", Toast.LENGTH_LONG).show()
+
         }
     }
 
-    fun getBlockList() {
+    private fun getBlockList() {
         ProjectService.getAllBlocks(
+            siteId,
             { success ->
-                print("oley")
-                val result = success as List<Block>
+               apiResult= success as MutableList<Block>
 
-                val rvItemListBlock = mutableListOf<String>()
-
-                for (item in result) {
+                rvItemListBlock = mutableListOf()
+                for (item in apiResult) {
                     rvItemListBlock.add(item.name)
                 }
 
                 changeAdapterData(rvItemListBlock)
-                print(result)
+                print(apiResult)
 
             },
             { failure ->
@@ -93,19 +120,20 @@ buttonnext.setOnClickListener {
     }
 
 
-
-
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: ProjectSitesFragment) {
         val fragmentManager = parentFragmentManager.beginTransaction()
         fragmentManager.replace(R.id.framelayout, fragment)
         fragmentManager.commit()
     }
 
-    override fun transactionbuttonRegion(position: Int) {
-        val regionfragment:Fragment=ProjectRegionFragment(requireContext())
-        val fragmentManager:FragmentManager= this.requireActivity().supportFragmentManager
-        val fragmentTransaction:FragmentTransaction=fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.framelayout,regionfragment)
+    override fun transactionbuttonRegion(index: Int) {
+        Constants.blokAdi = rvItemListBlock[index]
+
+        val regionfragment =
+            ProjectRegionFragment(requireContext(),apiResult[index].id.toString())
+        val fragmentManager: FragmentManager =requireActivity().supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.framelayout, regionfragment)
         fragmentTransaction.commit()
     }
 

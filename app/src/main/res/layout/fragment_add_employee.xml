@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/company_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/whiteblurnoradiusbackground"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.323"
+        tools:context=".ViewController.Adapters.LoginPage"
+        tools:ignore="MissingConstraints">
+
+        <!--  <EditText
+              android:id="@+id/userNameEditText"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+              android:drawablePadding="15dp"
+              android:ellipsize="end"
+              android:ems="10"
+              android:hint="Ad Soyad"
+              android:inputType="textPersonName"
+              android:padding="10dp"
+              android:textColor="#BD9DB4"
+              android:background="@drawable/circle"
+              android:textColorHint="#81687A" />
+  -->
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/company_icon"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:ems="10"
+            android:layout_margin="5dp"
+            android:background="@drawable/shapetransparent"
+            android:hint="İsim"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#050505"
+            android:textColorHint="#81687A" />
+
+        <EditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shapetransparent"
+            android:drawableLeft="@drawable/phone_icon"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:ems="10"
+            android:hint="Telefon Numarası"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#81687A" />
+
+
+
+        <EditText
+            android:id="@+id/job"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shapetransparent"
+            android:drawableLeft="@drawable/email_icon"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:hint="Meslek"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="#121111"
+            android:textColorHint="#81687A" />
+        <EditText
+            android:id="@+id/professionalChamber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shapetransparent"
+            android:drawableLeft="@drawable/email_icon"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:hint="Meslek Odası"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:textColor="#121111"
+            android:textColorHint="#81687A" />
+        <EditText
+            android:id="@+id/registerno"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shapetransparent"
+            android:drawableLeft="@drawable/email_icon"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:hint="Kayıt Numarası"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:textColor="#121111"
+            android:textColorHint="#81687A" />
+        <EditText
+            android:id="@+id/tckimlik"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shapetransparent"
+            android:drawableLeft="@drawable/ic_outline_info_24"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:hint="TC Kimlik Numarası"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:textColor="#121111"
+            android:textColorHint="#81687A" />
+
+        <EditText
+        android:id="@+id/tckimlikserino"
+        android:layout_width="match_parent"
+            android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/shapetransparent"
+        android:drawableLeft="@drawable/ic_outline_account_circle_24"
+        android:drawablePadding="15dp"
+        android:ellipsize="end"
+        android:hint="TC Kimlik Seri No"
+        android:inputType="textPostalAddress"
+        android:padding="10dp"
+        android:textColor="#121111"
+        android:textColorHint="#81687A" />
+        <EditText
+            android:id="@+id/sskNo"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shapetransparent"
+            android:drawableLeft="@drawable/ic_outline_info_24"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:hint="SSK Numarası"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:textColor="#121111"
+            android:textColorHint="#81687A" />
+
+            <Switch
+                android:id="@+id/switchuserown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Kendi personeli" />
+
+        <Button
+            android:id="@+id/employeeInfoCompletedButton"
+            android:layout_width="match_parent"
+            android:background="@drawable/edittextarkaplan"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="50dp"
+            android:text="Bilgileri Kaydet"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

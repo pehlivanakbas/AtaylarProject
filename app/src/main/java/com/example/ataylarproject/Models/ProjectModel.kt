@@ -1,10 +1,17 @@
 package com.example.ataylarproject.Models
 
+import android.os.Parcel
+import android.os.Parcelable
+import androidx.versionedparcelable.VersionedParcelize
+import kotlinx.parcelize.Parcelize
+
 data class Site(
 
-    val name: String = "",
+    var name: String = "",
 
-    val adminId: String = ""
+    val adminId: String = "",
+
+    val id: Int
 )
 
 data class Block(
@@ -13,8 +20,9 @@ data class Block(
 
     val adminId: String = "",
 
-    val siteId: String = ""
+    val siteId: String = "",
 
+    val id: Int
 )
 
 data class Region(
@@ -23,22 +31,81 @@ data class Region(
 
     val adminId: String = "",
 
-    val blockId: String = ""
+    val blockId: String = "",
+
+    val id: Int
 )
 
 data class Location(
 
-    val name: String = "",
+    val name: String? = "",
+
+    val adminId: String? = "",
+
+    val regionId: String = "",
+
+    val id: Int
+)
+
+
+data class Fault(
+    val employeeId: Int =0,
+
+    val locationId: String = "",
 
     val adminId: String = "",
 
-    val regionId: String = ""
-)
-data class Fault(
     val employeeNote: String = "",
 
-    val adminId: String = "",
+    val id: Int
+)
 
-    val locationId: String = ""
+
+data class User (
+   
+    val id: Int = 0,
+    
+    var adminId: String = "",
+
+     
+    var name: String = "",
+
+    var phoneNumber : String= "",
+
+     
+    var occupation : String= "",
+
+     
+    var professionalChamber: String = "",
+
+     
+    var registerNo: String = "",
+
+     
+    var tcKimlikNo : String= "",
+
+     
+    var tcKimlikSeriNo: String = "",
+
+     
+    var sskNo : String = "",
+
+     
+    var ownPersonal : Boolean = true,
+
+     
+    var userRole: String = ""
+
+)
+data class SiteInfo(
+    var id: Int,
+
+    var siteId: String,
+
+    var adress: String = "",
+
+    var mail:String="",
+    var phone: String=""
+
 )
 

@@ -19,10 +19,9 @@ object ProjectService {
         requestBody: Site,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<Site>? = apiInterface?.createSite(requestBody)
+        val apiCall: Call<Site>? = apiInterface?.createSite(requestBody)
 
         apiCall?.enqueue(object : retrofit2.Callback<Site> {
 
@@ -31,7 +30,7 @@ object ProjectService {
                 response: Response<Site>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -50,10 +49,9 @@ object ProjectService {
     fun getAllSites(
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<List<Site>>? = apiInterface?.getALlSites(Constants.ADMIN_ID)
+        val apiCall: Call<List<Site>>? = apiInterface?.getALlSites(Constants.ADMIN_ID)
 
         apiCall?.enqueue(object : retrofit2.Callback<List<Site>> {
 
@@ -62,7 +60,7 @@ object ProjectService {
                 response: Response<List<Site>>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -81,13 +79,12 @@ object ProjectService {
     //blocks
 
     fun createBlocks(
-        requestBody: Site,
+        requestBody: Block,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<Block>? = apiInterface?.createBlock(requestBody)
+        val apiCall: Call<Block>? = apiInterface?.createBlock(requestBody)
 
         apiCall?.enqueue(object : retrofit2.Callback<Block> {
 
@@ -96,7 +93,7 @@ object ProjectService {
                 response: Response<Block>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -113,12 +110,12 @@ object ProjectService {
     }
 
     fun getAllBlocks(
+        siteId: String,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<List<Block>>? = apiInterface?.getALlBlocks(Constants.ADMIN_ID)
+        val apiCall: Call<List<Block>>? = apiInterface?.getALlBlocks(siteId)
 
         apiCall?.enqueue(object : retrofit2.Callback<List<Block>> {
 
@@ -127,7 +124,7 @@ object ProjectService {
                 response: Response<List<Block>>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -149,10 +146,9 @@ object ProjectService {
         requestBody: Region,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<Region>? = apiInterface?.createRegion(requestBody)
+        val apiCall: Call<Region>? = apiInterface?.createRegion(requestBody)
 
         apiCall?.enqueue(object : retrofit2.Callback<Region> {
 
@@ -161,7 +157,7 @@ object ProjectService {
                 response: Response<Region>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -178,12 +174,12 @@ object ProjectService {
     }
 
     fun getAllRegions(
+        blockId: String,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<List<Region>>? = apiInterface?.getALlRegions(Constants.ADMIN_ID)
+        val apiCall: Call<List<Region>>? = apiInterface?.getALlRegions(blockId)
 
         apiCall?.enqueue(object : retrofit2.Callback<List<Region>> {
 
@@ -192,7 +188,7 @@ object ProjectService {
                 response: Response<List<Region>>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -214,10 +210,9 @@ object ProjectService {
         requestBody: Location,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<Location>? = apiInterface?.createLocation(requestBody)
+        val apiCall: Call<Location>? = apiInterface?.createLocation(requestBody)
 
         apiCall?.enqueue(object : retrofit2.Callback<Location> {
 
@@ -226,7 +221,7 @@ object ProjectService {
                 response: Response<Location>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -243,12 +238,13 @@ object ProjectService {
     }
 
     fun getAllLocations(
+        regionId: String,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<List<Location>>? = apiInterface?.getALlLocations(Constants.ADMIN_ID)
+        val apiCall: Call<List<Location>>? = apiInterface?.getALlLocations(regionId)
 
         apiCall?.enqueue(object : retrofit2.Callback<List<Location>> {
 
@@ -257,7 +253,7 @@ object ProjectService {
                 response: Response<List<Location>>
             ) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -273,21 +269,19 @@ object ProjectService {
         })
     }
 
-    //sites
-    fun createFault(
-        requestBody:Fault,
+  fun createFault(
+        requestBody: Fault,
         success: (success: Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
-    )
-    {
+    ) {
         val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
-        val apiCall : Call<Fault>? = apiInterface?.createFault(requestBody)
+        val apiCall: Call<Fault>? = apiInterface?.saveFault(requestBody)
 
-        apiCall?.enqueue(object : retrofit2.Callback<Fault> {
+       apiCall?.enqueue(object : retrofit2.Callback<Fault> {
 
             override fun onResponse(call: Call<Fault>, response: Response<Fault>) {
                 val responseAny = response as Response<*>
-                when(response.code()) {
+                when (response.code()) {
                     200 -> response.body()?.let {
                         success(it)
                     }
@@ -303,8 +297,9 @@ object ProjectService {
         })
     }
 
-    fun getAllFaults(
-        success: (success: Any) -> Unit,
+    fun getALlFaults(
+
+        success: (Any) -> Unit,
         failure: (failure: ErrorModel) -> Unit
     )
     {
@@ -324,6 +319,36 @@ object ProjectService {
             }
 
             override fun onFailure(call: Call<List<Fault>>, t: Throwable) {
+                Log.d("AUTH_ERROR", t.toString())
+                failure(ErrorHandler().returnResponse() as ErrorModel)
+            }
+
+        })
+    }
+
+
+
+    fun saveSiteInfo(
+        requestBody: SiteInfo,
+        success: (success: Any) -> Unit,
+        failure: (failure: ErrorModel) -> Unit
+    ) {
+        val apiInterface = RetrofitClientBuilder.client?.create(ApiInterface::class.java)
+        val apiCall: Call<SiteInfo>? = apiInterface?.saveSiteInfo(requestBody)
+
+        apiCall?.enqueue(object : retrofit2.Callback<SiteInfo> {
+
+            override fun onResponse(call: Call<SiteInfo>, response: Response<SiteInfo>) {
+                val responseAny = response as Response<*>
+                when (response.code()) {
+                    200 -> response.body()?.let {
+                        success(it)
+                    }
+                    else -> failure(ErrorHandler().returnResponse() as ErrorModel)
+                }
+            }
+
+            override fun onFailure(call: Call<SiteInfo>, t: Throwable) {
                 Log.d("AUTH_ERROR", t.toString())
                 failure(ErrorHandler().returnResponse() as ErrorModel)
             }

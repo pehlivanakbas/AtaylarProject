@@ -7,28 +7,19 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="@color/white" />
+        android:layout_height="5dp" />
 
     <LinearLayout
         android:id="@+id/employee_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/circle"
         android:orientation="horizontal"
-        android:padding="5dp"
-        >
+        android:background="@color/teal_200"
+        android:padding="5dp">
 
-        <ImageView
-            android:id="@+id/company_image"
-            android:layout_width="25dp"
-            android:layout_height="78dp"
-            android:background="@drawable/bgcornerradiousgrey"
-            android:layout_gravity="center"
-            android:layout_weight="2.5"
-           />
 
         <LinearLayout
+            android:id="@+id/linearlayoutlistitem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -36,70 +27,69 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/companyname"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                tools:text="Firma Adı" />
-
-            <TextView
-                android:id="@+id/customername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:text="Müşteri ADI SOYADI" />
+                tools:text=" Adı" />
+
+            <TextView
+                android:id="@+id/phoneNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="numarası" />
+            <TextView
+                android:id="@+id/professionalChamber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="professionalChamber" />
+            <TextView
+                android:id="@+id/tckimlik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="tckimlik" />
+            <TextView
+                android:id="@+id/tckimlikserino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="tckimlikserino" />
+            <TextView
+                android:id="@+id/sskNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="sskNo" />
+            <TextView
+                android:id="@+id/registerno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="registerno" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <!--TextView
-                    android:id="@+id/product_Price"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/purple_200"
-                    android:textSize="18sp"
-                    tools:text="$11.99" /-->
-
-                <!--TextView
-                    android:id="@+id/product_Quantity"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    tools:text="40 pcs" /-->
             </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <!--ImageButton
-                android:id="@+id/sale_Button"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.5"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@mipmap/facebookicon" />
-
-            <ImageView
-                android:id="@+id/color_indicator"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:paddingBottom="5dp"
-                android:src="@mipmap/facebookicon" /-->
 
         </LinearLayout>
 

@@ -17,19 +17,14 @@
 
     </androidx.appcompat.widget.AppCompatButton>
 
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Kusurlar"
+        android:textSize="30sp"
+        android:layout_marginLeft="140dp"
+        android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonnextfault"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:text="İleri"
-        android:textSize="12sp"
-        android:layout_marginLeft="310dp"
-        android:background="@drawable/shapetransparent"
-        android:drawableRight="@drawable/buttonmexticon">
-
-    </androidx.appcompat.widget.AppCompatButton>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,15 +33,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/fault_list_cardview"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabaddsite"
-        android:layout_width="77dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:contentDescription="AddButton"
-        android:src="@drawable/button_add"
-        tools:ignore="MissingConstraints" />
+
 
 </FrameLayout>

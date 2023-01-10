@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/userlayout"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:focusable="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/white" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/usercard"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/chooseassign"
+            android:background="@drawable/circle"
+            android:text="Yetki"
+            android:gravity="center"
+            android:textSize="20sp">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>

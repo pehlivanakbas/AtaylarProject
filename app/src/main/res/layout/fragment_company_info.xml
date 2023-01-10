@@ -89,6 +89,20 @@
             android:padding="10dp"
             android:textColor="#121111"
             android:textColorHint="#81687A" />
+        <EditText
+            android:id="@+id/locations"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shapetransparent"
+            android:drawableLeft="@drawable/email_icon"
+            android:drawablePadding="15dp"
+            android:ellipsize="end"
+            android:hint="Lokasyon"
+            android:inputType="textPostalAddress"
+            android:padding="10dp"
+            android:textColor="#121111"
+            android:textColorHint="#81687A" />
 
         <EditText
             android:id="@+id/socialMediaInstagram"
@@ -153,7 +167,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card2"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="72dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -185,6 +199,16 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="50dp"
             android:text="Bilgileri Kaydet"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/companyInfoUpdateButton"
+            android:layout_width="match_parent"
+            android:background="@drawable/edittextarkaplan"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="50dp"
+            android:text="Bilgileri Güncelle"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

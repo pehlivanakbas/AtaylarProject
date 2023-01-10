@@ -1,23 +1,21 @@
 package com.example.ataylarproject.Adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ataylarproject.Data.DataEmployee
 import com.example.ataylarproject.Fragments.EmployeelistFragment
+import com.example.ataylarproject.Models.User
 import com.example.ataylarproject.R
-import com.google.android.material.imageview.ShapeableImageView
+import okio.blackholeSink
 
-interface EmployeeListInterface {
-    fun transactionDetailBTPressed(index: Int)
-}
-class EmployeeListAdapter (private val userlist: ArrayList<DataEmployee>,
-                           private val mListener: EmployeelistFragment) :
+
+class EmployeeListAdapter(private val userlist: MutableList<User>,
+                          private val mListener: EmployeelistFragment
+) :
     RecyclerView.Adapter<EmployeeListAdapter.EmployeeListViewHolder>() {
 
 
@@ -30,20 +28,37 @@ class EmployeeListAdapter (private val userlist: ArrayList<DataEmployee>,
         return EmployeeListViewHolder(view)
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: EmployeeListViewHolder, position: Int) {
         val currentItem=userlist[position]
 
-        val companyname: TextView = holder.itemView.findViewById(R.id.companyname)
-        companyname.text = currentItem.companyName
-        val customername: TextView = holder.itemView.findViewById(R.id.customername)
-        customername.text = currentItem.Employeename
-        val companyImage: ImageView = holder.itemView.findViewById(R.id.company_image)
-        companyImage.setImageResource(currentItem.companyImage)
+        val name: TextView = holder.itemView.findViewById(R.id.name)
+        name.text = "${currentItem.name}"
+        val phoneNumberEditText: TextView = holder.itemView.findViewById(R.id.phoneNumberEditText)
+        phoneNumberEditText.text = "${currentItem.phoneNumber}"
+        val professionalChamber: TextView = holder.itemView.findViewById(R.id.professionalChamber)
+        professionalChamber.text = "${currentItem.professionalChamber}"
+        val tckimlik:TextView=holder.itemView.findViewById(R.id.tckimlik)
+        tckimlik.text = "${currentItem.tcKimlikNo}"
+        val tckimlikserino: TextView = holder.itemView.findViewById(R.id.tckimlikserino)
+        tckimlikserino.text = "${currentItem.tcKimlikSeriNo}"
+        val sskNo: TextView = holder.itemView.findViewById(R.id.sskNo)
+        sskNo.text = "${currentItem.sskNo}"
+        val registerno: TextView = holder.itemView.findViewById(R.id.registerno)
+        registerno.text = "${currentItem.registerNo}"
 
-        holder.employeecard .setOnClickListener {
-            mListener.transactionDetailBTPressed(position)
+        val listitem:LinearLayout=holder.itemView.findViewById(R.id.employee_card)
+        if(position%2==0){
+            listitem.setBackgroundColor(R.color.teal_200)
         }
+        //val companyImage: ImageView = holder.itemView.findViewById(R.id.company_image)
+       //companyImage.setImageResource(currentItem.name)
+
+
     }
+
+
+
 
     override fun getItemCount(): Int {
         return userlist.size

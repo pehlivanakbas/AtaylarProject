@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ataylarproject.Fragments.FaultsFragment
-import com.example.ataylarproject.Fragments.ProjectLocationFragment
+import com.example.ataylarproject.Models.Fault
 import com.example.ataylarproject.R
 
 
@@ -15,9 +15,8 @@ interface FaultListInterface {
     fun transactionbuttonFault(index: Int)
 }
 class FaultsAdapter(
-    private val itemList: List<String>,
+    private val itemList: MutableList<Fault>,
     var context: Context,
-    private val mListener: FaultsFragment
 ):
     RecyclerView.Adapter<FaultsAdapter.FaultViewHolder>() {
 
@@ -34,10 +33,8 @@ class FaultsAdapter(
     }
 
     override fun onBindViewHolder(holder: FaultViewHolder, position: Int) {
-        holder.textFaults.text=itemList[position]
-        holder.textFaults.setOnClickListener {
-            mListener.transactionbuttonFault(position)
-        }
+        holder.textFaults.text=itemList[position].employeeNote
+
     }
 
     override fun getItemCount(): Int {
